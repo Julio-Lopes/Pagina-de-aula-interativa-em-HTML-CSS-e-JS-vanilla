@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Teste tecnico frontend: pagina interativa de EdTech implementada em HTML, CSS e JavaScript vanilla." />
+  <title>DOT · Página Interativa</title>
+
+  <!-- Inter via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="page">
+    <!-- ============================= HEADER / HERO ============================= -->
+    <header class="hero on-dark">
+      <!-- camada decorativa: linhas verdes fluidas + círculos -->
+      <svg class="hero__deco" viewBox="0 0 1280 744" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path d="M0 161.55C256 107.7 469.333 188.475 640 403.875C810.667 619.275 1024 700.05 1280 646.2" fill="none" stroke="#76B900" stroke-width="2.08775"/>
+        <path d="M0 403.875C341.333 350.025 597.333 376.95 768 484.65C938.667 592.35 1109.33 511.575 1280 242.325" fill="none" stroke="#76B900" stroke-width="1.04387"/>
+        <path opacity="0.5" d="M1280 80.775C1024 242.325 725.333 376.95 384 484.65C42.6667 592.35 -85.3333 673.125 0 726.975" fill="none" stroke="#76B900" stroke-width="1.56581"/>
+        <circle cx="1150" cy="185" r="64" fill="none" stroke="#76B900" stroke-opacity="0.2"/>
+        <circle cx="1150" cy="185" r="88" fill="none" stroke="#76B900" stroke-opacity="0.1"/>
+        <circle cx="576" cy="650" r="32" fill="none" stroke="#FFFFFF" stroke-opacity="0.1"/>
+      </svg>
+
+      <div class="hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Aprenda no seu <span class="accent">ritmo</span></h1>
+          <p class="hero__desc">
+            Uma trilha de conteúdo interativo com vídeo, áudio e atividades
+            práticas para fixar o que importa, do início ao fim.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--brand" href="#conteudo">
+              Começar agora
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- card de vidro decorativo -->
+        <div class="glass" aria-hidden="true">
+          <div class="glass__bar">
+            <div class="glass__dots"><span></span><span></span><span></span></div>
+            <div class="glass__pill"></div>
+          </div>
+          <div class="glass__body">
+            <div class="glass__side">
+              <div class="glass__line"></div>
+              <div class="glass__line glass__line--short"></div>
+              <div class="glass__accent"></div>
+            </div>
+            <div class="glass__content">
+              <div class="glass__chart">
+                <svg viewBox="0 0 344 64" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0 50 L40 44 L80 52 L120 34 L160 40 L200 24 L240 30 L280 15 L320 22 L344 10 L344 64 L0 64 Z" fill="rgba(118,185,0,0.2)"/>
+                  <path d="M0 50 L40 44 L80 52 L120 34 L160 40 L200 24 L240 30 L280 15 L320 22 L344 10" fill="none" stroke="#76B900" stroke-width="1.6" vector-effect="non-scaling-stroke"/>
+                </svg>
+              </div>
+              <div class="glass__tiles"><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================= MAIN ============================= -->
+    <main class="main" id="conteudo">
+
+      <!-- ---------- Vídeo ---------- -->
+      <section aria-labelledby="video-title">
+        <div class="section-head" style="margin-bottom: var(--space-4)">
+          <h2 id="video-title">Aula em vídeo</h2>
+          <p>Assista à introdução do módulo antes de seguir para as atividades.</p>
+        </div>
+        <div class="video__frame" data-video-root data-youtube="aqz-KE-bpKQ">
+          <img class="video__poster" src="https://picsum.photos/seed/dot-video/1280/720" alt="" />
+          <button class="video__overlay" type="button" aria-label="Reproduzir vídeo da aula">
+            <span class="video__play" aria-hidden="true">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="currentColor"><path d="M0 1.6v16.8c0 1.2 1.3 2 2.4 1.4l14-8.4c1-.6 1-2.2 0-2.8l-14-8.4C1.3-.4 0 .4 0 1.6z"/></svg>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ---------- Imagem lateral ---------- -->
+      <section class="card side" aria-labelledby="side-title">
+        <div class="side__media">
+          <img src="https://picsum.photos/seed/dot-side/800/600" alt="Ondas do mar quebrando na costa" />
+        </div>
+        <div class="side__text">
+          <h2 id="side-title" class="sr-only">Sobre o conteúdo</h2>
+          <p>
+            Cada módulo combina teoria e prática para que o aprendizado
+            aconteça de forma contínua. O conteúdo se adapta ao seu
+            dispositivo, do desktop ao celular.
+          </p>
+          <p>
+            A imagem ao lado acompanha o texto e permanece responsiva:
+            no celular ela passa para o topo e ocupa toda a largura,
+            mantendo a leitura confortável.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- Slider ---------- -->
+      <section class="card slider" aria-roledescription="carrossel" aria-label="Galeria de imagens" data-slider-root tabindex="0">
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slider__slide" role="group" aria-roledescription="slide" aria-label="1 de 3">
+              <img src="https://picsum.photos/seed/dot-1/960/440" alt="Estrada na floresta" />
+            </div>
+            <div class="slider__slide" role="group" aria-roledescription="slide" aria-label="2 de 3">
+              <img src="https://picsum.photos/seed/dot-2/960/440" alt="Montanhas ao amanhecer" />
+            </div>
+            <div class="slider__slide" role="group" aria-roledescription="slide" aria-label="3 de 3">
+              <img src="https://picsum.photos/seed/dot-3/960/440" alt="Lago calmo entre árvores" />
+            </div>
+          </div>
+        </div>
+        <div class="slider__nav">
+          <button class="slider__btn" type="button" data-slider="prev" aria-label="Slide anterior">
+            <svg width="7" height="11" viewBox="0 0 7 11" fill="none" aria-hidden="true"><path d="M5.5 1 1.5 5.5l4 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="slider__dots" role="tablist" aria-label="Selecionar slide"></div>
+          <button class="slider__btn" type="button" data-slider="next" aria-label="Próximo slide">
+            <svg width="7" height="11" viewBox="0 0 7 11" fill="none" aria-hidden="true"><path d="M1.5 1l4 4.5-4 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ---------- Destaque ---------- -->
+      <section class="highlight" aria-label="Destaque">
+        <p>
+          Dica do módulo: revise o vídeo sempre que precisar. O progresso
+          nas atividades fica salvo enquanto a aba estiver aberta, então
+          você pode recarregar a página sem perder o que já respondeu.
+        </p>
+      </section>
+
+      <!-- ---------- Cards interativos ---------- -->
+      <section class="cards" aria-label="Cartões interativos">
+        <article class="icard" data-card>
+          <div class="icard__center">
+            <span class="icard__mark" aria-hidden="true">?</span>
+            <p class="icard__text">
+              Este cartão abre ao clicar em Abrir e fecha ao clicar em
+              Fechar. O conteúdo aparece e o cartão fica escuro.
+            </p>
+          </div>
+          <button class="icard__toggle" type="button" data-card-toggle>Abrir</button>
+        </article>
+
+        <article class="icard" data-card>
+          <div class="icard__center">
+            <span class="icard__mark" aria-hidden="true">?</span>
+            <p class="icard__text">
+              Cada cartão funciona de forma independente: abrir um não
+              fecha os outros. Tudo em JavaScript vanilla e acessível.
+            </p>
+          </div>
+          <button class="icard__toggle" type="button" data-card-toggle>Abrir</button>
+        </article>
+
+        <article class="icard" data-card>
+          <div class="icard__center">
+            <span class="icard__mark" aria-hidden="true">?</span>
+            <p class="icard__text">
+              O botão troca de rótulo conforme o estado e o cartão sobe
+              um pouco ao abrir, como no layout de referência.
+            </p>
+          </div>
+          <button class="icard__toggle" type="button" data-card-toggle>Abrir</button>
+        </article>
+      </section>
+
+      <!-- ---------- Áudio ---------- -->
+      <section aria-labelledby="audio-title">
+        <div class="section-head" style="margin-bottom: var(--space-4)">
+          <h2 id="audio-title">Versão em áudio</h2>
+          <p>Prefere ouvir? Toque no play para acompanhar o conteúdo em áudio.</p>
+        </div>
+        <div class="card audio" data-audio-root>
+          <audio preload="metadata" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+          <button class="audio__btn" type="button" data-audio-play></button>
+          <div class="audio__seek">
+            <input class="audio__range" type="range" min="0" max="100" value="0" step="0.1"
+                   data-audio-seek aria-label="Progresso da faixa" />
+          </div>
+          <span class="audio__time" data-audio-time>0:00 / 0:00</span>
+          <div class="audio__vol">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.16667 14.5833V12.875C10.4167 12.5139 11.4236 11.8194 12.1875 10.7917C12.9514 9.76389 13.3333 8.59722 13.3333 7.29167C13.3333 5.98611 12.9514 4.81944 12.1875 3.79167C11.4236 2.76389 10.4167 2.06944 9.16667 1.70833V0C10.8889 0.388889 12.2917 1.26042 13.375 2.61458C14.4583 3.96875 15 5.52778 15 7.29167C15 9.05556 14.4583 10.6146 13.375 11.9688C12.2917 13.3229 10.8889 14.1944 9.16667 14.5833ZM0 9.8125V4.8125H3.33333L7.5 0.645833V13.9792L3.33333 9.8125H0ZM9.16667 10.6458V3.9375C9.81944 4.24306 10.3299 4.70139 10.6979 5.3125C11.066 5.92361 11.25 6.59028 11.25 7.3125C11.25 8.02083 11.066 8.67708 10.6979 9.28125C10.3299 9.88542 9.81944 10.3403 9.16667 10.6458ZM5.83333 4.6875L4.04167 6.47917H1.66667V8.14583H4.04167L5.83333 9.9375V4.6875Z" fill="#64748B"/>
+            </svg>
+            <input class="audio__range" type="range" min="0" max="100" value="70"
+                   data-audio-vol aria-label="Volume" />
+          </div>
+          <button class="audio__gear" type="button" aria-label="Configurações do áudio">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.08333 16.6667L5.75 14C5.56944 13.9306 5.39931 13.8472 5.23958 13.75C5.07986 13.6528 4.92361 13.5486 4.77083 13.4375L2.29167 14.4792L0 10.5208L2.14583 8.89583C2.13194 8.79861 2.125 8.70486 2.125 8.61458C2.125 8.52431 2.125 8.43056 2.125 8.33333C2.125 8.23611 2.125 8.14236 2.125 8.05208C2.125 7.96181 2.13194 7.86806 2.14583 7.77083L0 6.14583L2.29167 2.1875L4.77083 3.22917C4.92361 3.11806 5.08333 3.01389 5.25 2.91667C5.41667 2.81944 5.58333 2.73611 5.75 2.66667L6.08333 0H10.6667L11 2.66667C11.1806 2.73611 11.3507 2.81944 11.5104 2.91667C11.6701 3.01389 11.8264 3.11806 11.9792 3.22917L14.4583 2.1875L16.75 6.14583L14.6042 7.77083C14.6181 7.86806 14.625 7.96181 14.625 8.05208C14.625 8.14236 14.625 8.23611 14.625 8.33333C14.625 8.43056 14.625 8.52431 14.625 8.61458C14.625 8.70486 14.6111 8.79861 14.5833 8.89583L16.7292 10.5208L14.4375 14.4792L11.9792 13.4375C11.8264 13.5486 11.6667 13.6528 11.5 13.75C11.3333 13.8472 11.1667 13.9306 11 14L10.6667 16.6667H6.08333ZM7.54167 15H9.1875L9.47917 12.7917C9.90972 12.6806 10.309 12.5174 10.6771 12.3021C11.0451 12.0868 11.3819 11.8264 11.6875 11.5208L13.75 12.375L14.5625 10.9583L12.7708 9.60417C12.8403 9.40972 12.8889 9.20486 12.9167 8.98958C12.9444 8.77431 12.9583 8.55556 12.9583 8.33333C12.9583 8.11111 12.9444 7.89236 12.9167 7.67708C12.8889 7.46181 12.8403 7.25694 12.7708 7.0625L14.5625 5.70833L13.75 4.29167L11.6875 5.16667C11.3819 4.84722 11.0451 4.57986 10.6771 4.36458C10.309 4.14931 9.90972 3.98611 9.47917 3.875L9.20833 1.66667H7.5625L7.27083 3.875C6.84028 3.98611 6.44097 4.14931 6.07292 4.36458C5.70486 4.57986 5.36806 4.84028 5.0625 5.14583L3 4.29167L2.1875 5.70833L3.97917 7.04167C3.90972 7.25 3.86111 7.45833 3.83333 7.66667C3.80556 7.875 3.79167 8.09722 3.79167 8.33333C3.79167 8.55556 3.80556 8.77083 3.83333 8.97917C3.86111 9.1875 3.90972 9.39583 3.97917 9.60417L2.1875 10.9583L3 12.375L5.0625 11.5C5.36806 11.8194 5.70486 12.0868 6.07292 12.3021C6.44097 12.5174 6.84028 12.6806 7.27083 12.7917L7.54167 15ZM8.41667 11.25C9.22222 11.25 9.90972 10.9653 10.4792 10.3958C11.0486 9.82639 11.3333 9.13889 11.3333 8.33333C11.3333 7.52778 11.0486 6.84028 10.4792 6.27083C9.90972 5.70139 9.22222 5.41667 8.41667 5.41667C7.59722 5.41667 6.90625 5.70139 6.34375 6.27083C5.78125 6.84028 5.5 7.52778 5.5 8.33333C5.5 9.13889 5.78125 9.82639 6.34375 10.3958C6.90625 10.9653 7.59722 11.25 8.41667 11.25Z" fill="#64748B"/>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ---------- Atividade discursiva ---------- -->
+      <section class="card activity" aria-labelledby="disc-title" data-activity="discursive">
+        <div class="activity__head">
+          <span class="activity__badge" aria-hidden="true">
+            <svg width="18" height="16" viewBox="0 0 18 16" fill="currentColor"><path d="M2 0h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6l-4 3v-3H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z"/></svg>
+          </span>
+          <div class="activity__titles">
+            <h3 id="disc-title">Atividade discursiva</h3>
+            <p>Escreva sua resposta no campo abaixo e clique em Responder.</p>
+          </div>
+        </div>
+
+        <label class="sr-only" for="disc-answer">Sua resposta</label>
+        <textarea id="disc-answer" data-field placeholder="Digite sua resposta aqui..."></textarea>
+
+        <div class="activity__actions">
+          <button class="btn btn--primary" type="button" data-action="responder" disabled>Responder</button>
+          <button class="btn btn--muted" type="button" data-action="alterar" disabled>Alterar</button>
+        </div>
+
+        <div class="feedback feedback--success" data-feedback="success" role="status">
+          <h4>É isso aí!</h4>
+          <p>Resposta registrada. Você pode clicar em Alterar para revisar o que escreveu.</p>
+        </div>
+      </section>
+
+      <!-- ---------- Atividade objetiva ---------- -->
+      <section class="card activity" aria-labelledby="obj-title" data-activity="objective" data-correct="b">
+        <div class="activity__head">
+          <span class="activity__badge" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M10 0a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.7 7.7-5.4 5.4a1 1 0 0 1-1.4 0L5.3 10.4a1 1 0 1 1 1.4-1.4l1.9 1.9 4.7-4.7a1 1 0 0 1 1.4 1.5z"/></svg>
+          </span>
+          <div class="activity__titles">
+            <h3 id="obj-title">Atividade objetiva</h3>
+            <p>Selecione a alternativa correta e clique em Responder.</p>
+          </div>
+        </div>
+
+        <fieldset class="options" style="border:0;padding:0;margin:0">
+          <legend class="sr-only">Alternativas</legend>
+
+          <label class="option">
+            <input type="checkbox" name="obj" value="a" />
+            <span class="option__box" aria-hidden="true"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="option__text">A) O conteúdo só pode ser consumido em ordem fixa.</span>
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="obj" value="b" />
+            <span class="option__box" aria-hidden="true"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="option__text">B) As respostas ficam salvas enquanto a aba estiver aberta.</span>
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="obj" value="c" />
+            <span class="option__box" aria-hidden="true"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="option__text">C) É necessário criar conta para ver o vídeo.</span>
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="obj" value="d" />
+            <span class="option__box" aria-hidden="true"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="option__text">D) O player de áudio não funciona no celular.</span>
+          </label>
+        </fieldset>
+
+        <div class="activity__actions">
+          <button class="btn btn--primary" type="button" data-action="responder" disabled>Responder</button>
+          <button class="btn btn--muted" type="button" data-action="alterar" disabled>Alterar</button>
+        </div>
+
+        <div class="feedback feedback--success" data-feedback="success" role="status">
+          <h4>É isso aí!</h4>
+          <p>Alternativa correta. As respostas ficam guardadas no sessionStorage.</p>
+        </div>
+        <div class="feedback feedback--retry" data-feedback="retry" role="status">
+          <h4>Tente novamente!</h4>
+          <p>Não é essa. Clique em Alterar para escolher outra alternativa.</p>
+        </div>
+      </section>
+
+      <!-- ---------- FAQ (accordion nativo) ---------- -->
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="faq__head">
+          <h2 id="faq-title">Perguntas frequentes</h2>
+          <p>Tudo o que você precisa saber sobre o funcionamento da página.</p>
+        </div>
+
+        <details class="faq__item" open>
+          <summary class="faq__summary">
+            Como o progresso das atividades é salvo?
+            <span class="faq__chevron" aria-hidden="true"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq__content">
+            As respostas, o feedback exibido e o estado dos botões são
+            guardados no sessionStorage e restaurados automaticamente ao
+            recarregar a página, enquanto a aba permanecer aberta.
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__summary">
+            A página funciona no celular?
+            <span class="faq__chevron" aria-hidden="true"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq__content">
+            Sim. O layout é responsivo: os componentes se reorganizam em
+            coluna única em telas menores, mantendo tudo utilizável no
+            toque.
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__summary">
+            Preciso de algum plugin para os players?
+            <span class="faq__chevron" aria-hidden="true"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq__content">
+            Não. O vídeo usa o embed do YouTube carregado sob demanda e o
+            áudio usa o elemento nativo do navegador, com controles
+            próprios feitos em JavaScript.
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__summary">
+            A página é acessível por teclado?
+            <span class="faq__chevron" aria-hidden="true"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5 6 6.5l5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="faq__content">
+            Sim. Há foco visível em todos os controles, navegação por Tab,
+            setas para o slider e uso de HTML semântico com atributos ARIA
+            onde necessário.
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <img class="footer__logo" src="assets/logofooter.svg" alt="DOT Digital Group" width="145" height="42" />
+        </div>
+        <small>© <span data-year>2026</span> DOT Digital Group. Todos os direitos reservados.</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts (classicos, funcionam abrindo o index.html direto) -->
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/videoPlayer.js"></script>
+  <script src="js/audioPlayer.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/activities.js"></script>
+</body>
+</html>
