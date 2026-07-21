@@ -1,0 +1,198 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+svg,
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  color: var(--color-text-heading);
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ---- Foco visivel e consistente (acessibilidade) ---- */
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Foco sobre fundo escuro ganha contorno claro */
+.on-dark :focus-visible {
+  outline-color: #FFFFFF;
+}
+
+/* ---- Movimento reduzido ---- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---- Apenas para leitores de tela ---- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Link "pular para o conteudo" */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: var(--color-ink);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  transition: top var(--dur) var(--ease);
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* ---- Container central ---- */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* ============================================================
+   Botoes (variantes vistas no Figma: primario, secundario,
+   verde, outline; e estados default / hover / disabled)
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: background var(--dur) var(--ease),
+    transform var(--dur) var(--ease), opacity var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* Primario (preto) */
+.btn--primary {
+  background: var(--color-ink);
+  color: #fff;
+}
+.btn--primary:hover:not(:disabled) {
+  background: #000;
+}
+
+/* Verde de marca */
+.btn--brand {
+  padding: 0 32px;
+  height: 56px;
+  background: var(--color-brand);
+  color: var(--color-ink);
+  font-weight: 700;
+  box-shadow: var(--shadow-brand);
+}
+.btn--brand:hover:not(:disabled) {
+  background: #85cf00;
+}
+
+/* Secundario (cinza claro) */
+.btn--muted {
+  background: var(--color-surface-4);
+  color: var(--color-text-gray-2);
+}
+.btn--muted:hover:not(:disabled) {
+  background: #e9ebee;
+  color: var(--color-text-slate);
+}
+
+/* Outline claro (usado no card de destaque escuro) */
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #4B5563;
+}
+.btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+}
